@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.scene {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #CCC;
+  margin: 80px;
+  perspective: 400px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+  transition-delay: 2s;
+}
+
+.cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  user-select: none;
+}
+
+.cube__face--front  { background: rgb(255, 255, 255); }
+.cube__face--right  { background: rgb(255, 255, 255); }
+.cube__face--back   { background: rgb(255, 255, 255); }
+.cube__face--left   { background: rgb(255, 255, 255); }
+.cube__face--top    { background: rgb(255, 255, 255); }
+.cube__face--bottom { background: rgb(255, 255, 255); }
+
+.cube__face--front  { transform: rotateY(0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY(90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+label { margin-right: 10px; }
+
+.spinning{
+    animation-name: spinning;
+    animation-duration: 2s;
+}
+
+@keyframes spinning {
+    0% {}
+    20% { transform: rotateX(179deg) rotateY(179deg) rotateZ(179deg); }
+    40% { transform: rotateX(358deg) rotateY(358deg) rotateZ(358deg); }
+    60% { transform: rotateX(150deg) rotateY(150deg) rotateZ(150deg); }
+    80% { transform: rotateX(330deg) rotateY(330deg) rotateZ(330deg); }
+    100% { transform: rotateX(100deg) rotateY(100deg rotateZ(100deg)); }
+}
