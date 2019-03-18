@@ -1,5 +1,6 @@
 :root{
   --primary: purple;
+  --secondary: #321312;
 }
 
 body { font-family: sans-serif; }
