@@ -82,6 +82,10 @@ body {
   margin: 1rem;
   position: relative;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  display:inline-block;
+}
+
+.scene-container {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -91,4 +95,8 @@ body {
 .navbar-brand {
   color: white;
   font-size: 30px;
+}
+
+#about-title, .about-paragraph, .about-sub-title, .about-anchor {
+  margin: 10px;
 }

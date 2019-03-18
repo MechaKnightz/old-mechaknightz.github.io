@@ -1,5 +1,4 @@
 window.onload = function() {
-	console.log("test");
 	var elements = document.getElementsByTagName('*'),
 		i;
 	for (i in elements) {

@@ -41,6 +41,10 @@ function onCubeClick() {
     rollAllDice();
 }
 
+shaker.on("step",function(o){
+    rollAllDice();
+ });
+
 function rollAllDice(){
     Array.prototype.forEach.call (cubeList, function (cube) {
 
