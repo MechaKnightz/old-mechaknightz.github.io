@@ -15,8 +15,6 @@ window.onload = function() {
 			status = 0;
 
 		xmlhttp.onreadystatechange = function() {
-			/* if we are on a local protocol, and we have response text, we'll assume
- *  				things were sucessful */
 			if (xmlhttp.readyState == 4) {
 				status = xmlhttp.status;
 			}
@@ -32,9 +30,19 @@ window.onload = function() {
 			xmlhttp.open("GET", url, true);
 			xmlhttp.send();
 		} catch(err) {
-			/* todo catch error */
 		}
-	}
+    }
+    
+    var element = document.querySelector(".scene-container");
+    var hammertime = Hammer(element);
+    hammertime.on("swiperight", function(event) { swipe(); });    
+    hammertime.on("swipeleft", function(event) { swipe(); });  
+
+
+}
+
+function swipe(){
+    rollAllDice();
 }
 
 function onCubeClick() {

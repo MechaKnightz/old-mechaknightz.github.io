@@ -90,6 +90,8 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .navbar-brand {
@@ -98,5 +100,27 @@ body {
 }
 
 #about-title, .about-paragraph, .about-sub-title, .about-anchor {
-  margin: 10px;
+  margin: 8px;
+}
+
+#dice-title, #dice-title-mobile {
+  text-align: center;
+  margin: 8px;
+}
+
+#dice-title {
+  display: none;
+}
+
+@media all and (min-width: 800px) {
+  #dice-title-mobile {
+    display: none;
+  }
+  #dice-title {
+    display: block;
+  }
+  .scene-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
