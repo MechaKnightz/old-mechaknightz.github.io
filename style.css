@@ -1,9 +1,10 @@
 :root{
   --primary: purple;
   --secondary: #321312;
+  --font: sans-serif;
 }
 
-body { font-family: sans-serif; }
+body { font-family: var(--font); }
 
 .scene {
   width: 200px;
@@ -57,8 +58,6 @@ body { font-family: sans-serif; }
 .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
 
-label { margin-right: 10px; }
-
 .spinning{
     animation-name: spinning;
     animation-duration: 2s;
@@ -73,12 +72,6 @@ label { margin-right: 10px; }
     100% { transform: rotateX(100deg) rotateY(100deg rotateZ(100deg)); }
 }
 
-nav {
-  width: 100%;
-  background: var(--primary);
-  padding: 8px;
-}
-
 body {
   margin: 0;
 }
@@ -86,11 +79,16 @@ body {
 .card {
   background: #fff;
   border-radius: 2px;
-  display: inline-block;
   margin: 1rem;
   position: relative;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  flex-direction: row;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 30px;
 }
