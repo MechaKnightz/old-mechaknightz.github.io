@@ -1,50 +1,59 @@
-var cube;
+var cubeList;
 function init() {
-    cube = document.querySelector('.cube');
+    cubeList = document.querySelectorAll('.cube');
 }
 
 function onCubeClick() {
-    rollDice();
+    rollAllDice();
 }
 
-function rollDice() {
-    rollTo(Math.floor(Math.random() * 6) + 1);
+function rollAllDice(){
+    Array.prototype.forEach.call (cubeList, function (cube) {
+
+        rollDice(cube);
+    
+    } );
 }
 
-function rollTo(value) {
-    console.log(value);
+function rollDice(cubeToRoll) {
+    rollTo(Math.floor(Math.random() * 6) + 1, cubeToRoll);
+}
+
+function rollTo(value, cubeToRoll) {
+    var side;
     switch (value) {
         case 1:
-            rotateToSide("front");
+            side = "front";
             break;
         case 2:
-            rotateToSide("left");
+            side = "left";
             break;
         case 3:
-            rotateToSide("bottom");
+            side = "bottom";
             break;
         case 4:
-            rotateToSide("top");
+            side = "top";
             break;
         case 5:
-            rotateToSide("right");
+            side = "right";
             break;
         case 6:
-            rotateToSide("back");
+            side = "back";
             break;
     }
+    rotateToSide(side, cubeToRoll);
 }
 
 var currentClass = '';
-function rotateToSide(side) {
+function rotateToSide(side, cubeToRotate) {
     var showClass = 'show-' + side;
     if (currentClass) {
-        cube.classList.remove(currentClass);
+        cubeToRotate.classList.remove(currentClass);
     }
-    cube.classList.add(showClass);
+    cubeToRotate.classList.add(showClass);
     currentClass = showClass;
 
-    cube.classList.remove("spinning");
-    void cube.offsetWidth;
-    cube.classList.add("spinning");
+    cubeToRotate.classList.remove("spinning");
+    void cubeToRotate.offsetWidth;
+    cubeToRotate.classList.add("spinning");
 }
