@@ -53,16 +53,21 @@ shaker.on("step",function(o){
     rollAllDice();
  });
 
-function rollAllDice(){
+async function rollAllDice(){
+    var score = 0;
     Array.prototype.forEach.call (cubeList, function (cube) {
-
-        rollDice(cube);
-    
+        var number = Math.floor(Math.random() * 6) + 1;
+        score += number;
+        rollTo(number, cube);
+        console.log("rolled " + number);
     } );
+    var element = document.getElementById("score");
+    await sleep(3000);
+    element.textContent = `You scored a combined ${score}`;
 }
 
 function rollDice(cubeToRoll) {
-    rollTo(Math.floor(Math.random() * 6) + 1, cubeToRoll);
+    
 }
 
 function rollTo(value, cubeToRoll) {
@@ -90,16 +95,19 @@ function rollTo(value, cubeToRoll) {
     rotateToSide(side, cubeToRoll);
 }
 
-var currentClass = '';
 function rotateToSide(side, cubeToRotate) {
     var showClass = 'show-' + side;
-    if (currentClass) {
-        cubeToRotate.classList.remove(currentClass);
+    if (cubeToRotate.currentClass) {
+        cubeToRotate.classList.remove(cubeToRotate.currentClass);
     }
     cubeToRotate.classList.add(showClass);
-    currentClass = showClass;
+    cubeToRotate.currentClass = showClass;
 
     cubeToRotate.classList.remove("spinning");
     void cubeToRotate.offsetWidth;
     cubeToRotate.classList.add("spinning");
 }
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }

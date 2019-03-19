@@ -1,10 +1,17 @@
 :root{
-  --primary: purple;
+  --primary: #343a40;
   --secondary: #321312;
   --font: sans-serif;
 }
 
-body { font-family: var(--font); }
+body { 
+  font-family: var(--font); 
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
 
 .scene {
   width: 200px;
@@ -123,4 +130,68 @@ body {
     flex-direction: row;
     align-items: stretch;
   }
+}
+
+#content-container {
+  background-image: url("images/dice.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-text {
+  margin: 8px;
+  color: white;
+  background: var(--primary);
+}
+
+a:hover {
+  color: white;
+}
+
+#triangle {
+  width: 100%;
+  height:  100%;
+  position: relative;
+  left: 0;
+  border-top-left-radius: 2000px;
+  border-left: 4px solid var(--primary);
+  border-top: 4px solid var(--primary);
+}
+
+nav {
+  background: var(--primary);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.start-page-button {
+  background: transparent;
+  border-bottom: 4px solid var(--primary);
+  width: 80px;
+  color: var(--primary);
+  font-weight: bold;
+  border-bottom-left-radius: 4px;
+}
+
+#content-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#score {
+  text-align: center;
+  margin: 8px;
 }
