@@ -6,18 +6,21 @@
 
 body { 
   font-family: var(--font); 
-  height: 100%;
+  
 }
-
-html {
+body, html{
+  margin:0;
+  padding:0;
   height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 .scene {
   width: 200px;
   height: 200px;
   border: 1px solid #CCC;
-  margin: 80px;
+  margin: 40px;
   perspective: 400px;
 }
 
@@ -77,10 +80,6 @@ html {
     60% { transform: rotateX(150deg) rotateY(150deg) rotateZ(150deg); }
     80% { transform: rotateX(330deg) rotateY(330deg) rotateZ(330deg); }
     100% { transform: rotateX(100deg) rotateY(100deg rotateZ(100deg)); }
-}
-
-body {
-  margin: 0;
 }
 
 .card {
@@ -209,5 +208,14 @@ nav {
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
+  }
+  .scene {
+    margin: 80px;
+  }
+}
+
+@media all and (min-width: 375px) {
+  .scene {
+    margin: 50px;
   }
 }
