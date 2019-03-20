@@ -59,7 +59,6 @@ async function rollAllDice(){
         var number = Math.floor(Math.random() * 6) + 1;
         score += number;
         rollTo(number, cube);
-        console.log("rolled " + number);
     } );
     var element = document.getElementById("score");
     await sleep(2500);
