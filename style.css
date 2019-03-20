@@ -107,7 +107,7 @@ body {
 }
 
 #about-title, .about-paragraph, .about-sub-title, .about-anchor {
-  margin: 8px;
+  margin: 20px;
 }
 
 #dice-title, #dice-title-mobile {
@@ -194,4 +194,9 @@ nav {
 #score {
   text-align: center;
   margin: 8px;
+}
+
+.spacer {
+  margin-left: 10px;
+  margin-right: 10px;
 }

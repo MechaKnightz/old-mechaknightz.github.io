@@ -62,7 +62,7 @@ async function rollAllDice(){
         console.log("rolled " + number);
     } );
     var element = document.getElementById("score");
-    await sleep(3000);
+    await sleep(2500);
     element.textContent = `You scored a combined ${score}`;
 }
 
