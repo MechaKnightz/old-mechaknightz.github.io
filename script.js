@@ -51,8 +51,6 @@ function onCubeClick() {
 
 shaker.on("step",function(o){
     rollAllDice();
-    var element = document.getElementById("score");
-    element.textContent = `You scored a combined ${o.steptreshold}`;
  });
 
 async function rollAllDice(){
@@ -62,9 +60,9 @@ async function rollAllDice(){
         score += number;
         rollTo(number, cube);
     } );
-    //var element = document.getElementById("score");
+    var element = document.getElementById("score");
     await sleep(2500);
-    //element.textContent = `You scored a combined ${score}`;
+    element.textContent = `You scored a combined ${score}`;
 }
 
 function rollDice(cubeToRoll) {
