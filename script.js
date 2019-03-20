@@ -49,7 +49,7 @@ function onCubeClick() {
     rollAllDice();
 }
 
-shaker.on("step",function(o){
+shaker.on("shake",function(o){
     rollAllDice();
  });
 
